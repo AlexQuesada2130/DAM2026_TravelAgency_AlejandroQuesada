@@ -365,33 +365,3 @@ body.auth-page {
 .full-width { grid-column: span 2; }
 .form-label { display: block; margin-bottom: 5px; color: #666; font-weight: bold; }
 textarea.auth-input { height: 100px; resize: vertical; }
-
-/* =========================
-                                                                   RESPONSIVIDAD
-   ========================= */
-@media (max-width: 768px) {
-    .container {
-        grid-template-areas: "cab" "img" "art" "sec1" "sec2" "pie";
-        grid-template-columns: 1fr;
-    }
-    .tarjeta, article, .section-URBAN, .section-TRIPS {
-        width: 95%;
-        margin: 10px auto;
-    }
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .container-resultados {
-        padding: 20px;
-    }
-    
-    .container-resultados h1 {
-        font-size: 1.8rem;
-    }
-    
-    .grid-container {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-        gap: 20px;
-    }
-}

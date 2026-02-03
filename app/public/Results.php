@@ -74,7 +74,7 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         /* 3. Contenedor Principal */
         .container-resultados {
-            flex: 1; /* Empuja el footer hacia abajo */
+            flex: 1; 
             position: relative;
             z-index: 1;
             max-width: 1200px;
@@ -82,33 +82,8 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             margin: 0 auto;
             padding: 40px 20px;
             box-sizing: border-box;
-            
-            /* CONTRASTE CORRECTO: Texto blanco sobre el fondo azul del body */
             color: #FFFFFF; 
         }
-
-        /* 4. Título Principal (H1) */
-        .container-resultados h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            /* Sombra suave para que se lea mejor */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
-            color: #FFFFFF;
-        }
-
-        /* 5. Footer (Pie de página) */
-        footer {
-            position: relative;
-            z-index: 1 !important;
-            margin-top: auto;
-        }
-
-        /* =========================================
-           TARJETAS DE VIAJE (FONDO BLANCO)
-           ========================================= */
 
         .grid-container {
             display: grid;
@@ -118,7 +93,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .viaje-card {
-            /* La tarjeta es blanca, así que el texto dentro debe ser oscuro */
             background-color: white; 
             border-radius: 15px;
             overflow: hidden; 
@@ -144,7 +118,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             border-bottom: 4px solid #FF7E47; 
         }
 
-        /* Títulos dentro de la tarjeta (OSCUROS para leerse sobre blanco) */
         .viaje-card h2 {
             color: #0B2447; /* Azul muy oscuro */
             font-size: 1.4rem;
@@ -152,7 +125,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             line-height: 1.2;
         }
 
-        /* Descripción dentro de la tarjeta (GRIS OSCURO) */
         .viaje-card p {
             color: #555;
             padding: 0 20px;
@@ -165,7 +137,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             margin-bottom: 15px;
         }
 
-        /* Precio (AZUL CORPORATIVO) */
         .viaje-card .precio {
             display: block;
             font-size: 1.5rem;
@@ -175,7 +146,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             padding: 0 20px 10px;
         }
 
-        /* Botón */
         .viaje-card .btn {
             display: block;
             background-color: #0B2447;
@@ -194,22 +164,14 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             color: white;
         }
 
-        /* Mensaje de "No encontrados" (BLANCO sobre fondo azul) */
         .lista-viajes > p {
             text-align: center;
             font-size: 1.2rem;
-            background: rgba(255,255,255,0.1); /* Fondo semitransparente */
             padding: 20px;
             border-radius: 10px;
             color: #FFFFFF;
             font-weight: bold;
             grid-column: 1 / -1;
-        }
-
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
         <main class="container-resultados">

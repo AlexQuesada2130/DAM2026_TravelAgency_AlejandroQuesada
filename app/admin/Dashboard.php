@@ -6,8 +6,6 @@ if (!isset($_SESSION['es_admin']) || $_SESSION['es_admin'] != 1) {
     header("Location: ../public/authentication/Login.php");
     exit();
 }
-
-$nombreAdmin = $_SESSION['nombre'] ?? 'Admin';
 ?>
 
 <!DOCTYPE html>
@@ -83,35 +81,19 @@ $nombreAdmin = $_SESSION['nombre'] ?? 'Admin';
         .theme-clients { background: #6f42c1; }
 
         .footer-nav {
-            border-top: 1px solid #eee;
+            border-top: 1px solid;
             padding-top: 25px;
             display: flex;
             flex-direction: column;
             gap: 15px;
             align-items: center;
         }
-
-        .btn-logout {
-            padding: 10px 30px;
-            background-color: #6c757d;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            transition: background-color 0.2s;
-        }
-
-        .btn-logout:hover { background-color: #545b62; }
-        .link-home { color: #2388C7; text-decoration: none; font-weight: 500; }
-        .link-home:hover { text-decoration: underline; }
-
     </style>
 </head>
 <body>
     <div class="dashboard-wrapper"> 
         <div class="dash-head">
-            <h1>Administración</h1>
-            <p>Bienvenido, <?php echo htmlspecialchars($nombreAdmin); ?></p>
+            <h1>Panel administrador</h1>
         </div>
         <div class="actions-grid">
             
@@ -133,8 +115,8 @@ $nombreAdmin = $_SESSION['nombre'] ?? 'Admin';
 
         </div>
         <div class="footer-nav">
-            <a href="../public/authentication/Logout.php" class="btn-logout">Cerrar Sesión</a>
-            <a href="../public/index.php" class="link-home">Volver a la web pública</a>
+            <a href="../public/authentication/Logout.php">Cerrar Sesión</a>
+            <a href="../public/index.php">Volver a la web pública</a>
         </div>
     </div>
 </body>

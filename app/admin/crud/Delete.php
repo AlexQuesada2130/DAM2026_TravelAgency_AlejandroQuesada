@@ -20,7 +20,6 @@ if (isset($_GET['id'])) {
     $stmt->bindParam(':id', $id);
     
     if ($stmt->execute()) {
-        // Redirigir de vuelta al listado si salió bien
         header("Location: Read.php");
     } else {
         echo "Error al eliminar el viaje.";

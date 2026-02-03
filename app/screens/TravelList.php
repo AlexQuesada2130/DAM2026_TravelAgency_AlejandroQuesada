@@ -1,17 +1,13 @@
 <?php
-// app/screens/TravelList.php
 require_once '../classes/Database.php';
 
 $db = new Database();
 $conn = $db->getConnection();
 
-// Traemos 6 viajes
 $sql = "SELECT * FROM viajes ORDER BY id_viaje DESC LIMIT 6";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Configura tu carpeta de imágenes
 $carpetaImagenes = "../assets/list/"; 
 ?>
 
@@ -54,10 +50,7 @@ $carpetaImagenes = "../assets/list/";
 
                 <div id="<?php echo $modalID; ?>" class="modal-viaje">
                     <div class="modal-contenido">
-                        <span class="cerrar-modal" onclick="cerrarModal('<?php echo $modalID; ?>')">&times;</span>
-                        
-                        <div class="modal-header-img" style="background-image: url('<?php echo $rutaCompleta; ?>');"></div>
-                        
+                        <span class="cerrar-modal" onclick="cerrarModal('<?php echo $modalID; ?>')">&times;</span>                
                         <div class="modal-body">
                             <h2 style="color: #0B2447; margin-top: 0;"><?php echo htmlspecialchars($viaje['titulo']); ?></h2>
                             
@@ -99,7 +92,7 @@ $carpetaImagenes = "../assets/list/";
         document.body.style.overflow = "auto"; // Reactiva el scroll
     }
 
-    // Cerrar si se hace clic fuera del contenido del modal
+ 
     window.onclick = function(event) {
         if (event.target.classList.contains('modal-viaje')) {
             event.target.style.display = "none";
@@ -109,13 +102,12 @@ $carpetaImagenes = "../assets/list/";
 </script>
 
 <style>
-    /* --- Estilos de las Tarjetas (Mismos de antes) --- */
+    
     .flex-viajes-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
-        width: 100%;
+        width: 95%;
         padding: 0 10px;
         box-sizing: border-box;
     }
@@ -123,15 +115,14 @@ $carpetaImagenes = "../assets/list/";
     .card-viaje-nueva {
         background: white;
         width: 300px;
-        height: 380px;
-        border-radius: 15px;
+        height: 350px;
+        border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         display: flex;
         flex-direction: column;
         position: relative;
-        flex-shrink: 0;
         margin-bottom: 20px;
+        
     }
 
     .card-img-box {
@@ -165,84 +156,41 @@ $carpetaImagenes = "../assets/list/";
         padding: 10px 25px;
         border-radius: 50px;
         font-weight: bold;
-        transition: background 0.3s;
         font-size: 1rem;
     }
-    .btn-ver-viaje:hover { background-color: #2388C7; }
 
-    /* --- ESTILOS DE LA VENTANA MODAL (DESPLEGABLE) --- */
     .modal-viaje {
-        display: none; /* Oculto por defecto */
+        display: none;
         position: fixed; 
-        z-index: 9999; /* Por encima de todo */
+        z-index: 5;
         left: 0;
         top: 0;
         width: 100%; 
         height: 100%; 
         overflow: auto; 
-        background-color: rgba(0,0,0,0.6); /* Fondo negro semitransparente */
-        backdrop-filter: blur(5px); /* Efecto borroso chulo */
     }
 
     .modal-contenido {
         background-color: #fefefe;
-        margin: 5% auto; /* Centrado vertical */
+        margin: 5% auto;
         padding: 0;
         border: 1px solid #888;
         width: 90%;
-        max-width: 600px; /* Ancho máximo */
+        max-width: 600px;
         border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         position: relative;
-        animation: animatetop 0.4s;
     }
 
-    /* Animación de entrada */
-    @keyframes animatetop {
-        from {top: -300px; opacity: 0}
-        to {top: 0; opacity: 1}
-    }
 
-    /* Botón X de cerrar */
     .cerrar-modal {
-        color: white;
         position: absolute;
         top: 10px;
         right: 20px;
         font-size: 30px;
         font-weight: bold;
         cursor: pointer;
-        z-index: 10;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    }
-    .cerrar-modal:hover { color: #FF7E47; }
-
-    /* Imagen de cabecera del modal */
-    .modal-header-img {
-        width: 100%;
-        height: 200px;
-        background-size: cover;
-        background-position: center;
-        border-radius: 12px 12px 0 0;
     }
 
     .modal-body { padding: 25px; text-align: left; }
 
-    /* Grid dentro del modal para datos clave */
-    .modal-grid-info {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        background-color: #f9f9f9;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }
-    .modal-grid-info p { margin: 5px 0; color: #333; }
-
-    /* Responsividad del modal */
-    @media (max-width: 600px) {
-        .modal-contenido { width: 95%; margin: 10% auto; }
-        .modal-grid-info { grid-template-columns: 1fr; }
-    }
 </style>

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../../assets/styles.css"> 
     
     <style>
-        /* Centrado perfecto en pantalla completa */
         body.auth-page { 
             margin: 0;
             padding: 0;
@@ -52,11 +51,6 @@
             display: flex;
             align-items: center;
             z-index: 3;
-        }
-
-        .btn-volver:hover {
-            transform: translateX(-5px);
-            color: #FF7E47;
         }
 
         .msg-alerta { 

@@ -2,7 +2,6 @@
 session_start();
 require_once '../../classes/Database.php';
 
-// Seguridad
 if (!isset($_SESSION['es_admin']) || $_SESSION['es_admin'] != 1) {
     header("Location: ../../public/authentication/Login.php");
     exit();

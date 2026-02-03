@@ -78,7 +78,6 @@ if (!isset($_SESSION['es_admin']) || $_SESSION['es_admin'] != 1) {
         .theme-read   { background: #17a2b8; }
         .theme-update { background: #ffc107; }
         .theme-delete { background: #dc3545; }
-        .theme-clients { background: #6f42c1; }
 
         .footer-nav {
             border-top: 1px solid;
@@ -109,10 +108,6 @@ if (!isset($_SESSION['es_admin']) || $_SESSION['es_admin'] != 1) {
             <a href="crud/Delete.php" class="action-card theme-delete">
                 Eliminar Viajes
             </a>
-            <a href="crud/ManagementClient.php" class="action-card theme-clients">
-                Gestión Clientes
-            </a>
-
         </div>
         <div class="footer-nav">
             <a href="../public/authentication/Logout.php">Cerrar Sesión</a>

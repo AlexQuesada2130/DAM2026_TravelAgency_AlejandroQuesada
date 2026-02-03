@@ -22,7 +22,6 @@ $stmt->execute([$id_viaje]);
 $viaje = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Lógica para imagen: Si suben una nueva, la usamos. Si no, mantenemos la vieja.
     $nombreImagen = $viaje['imagen'];
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0) {
         $target_dir = "../../assets/list/";
@@ -43,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -123,12 +121,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label class="form-label">Tipo</label>
                         <input type="text" name="tipo_viaje" class="auth-input" value="<?php echo htmlspecialchars($viaje['tipo_viaje']); ?>">
                     </div>
-
                     <div class="full-width">
                         <label class="form-label">Descripción</label>
                         <textarea name="descripcion" class="auth-input" style="height: 100px;"><?php echo htmlspecialchars($viaje['descripcion']); ?></textarea>
                     </div>
-
                     <div>
                         <label class="form-label">Fecha Inicio</label>
                         <input type="date" name="fecha_inicio" class="auth-input" value="<?php echo $viaje['fecha_inicio']; ?>">
@@ -137,7 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label class="form-label">Fecha Fin</label>
                         <input type="date" name="fecha_fin" class="auth-input" value="<?php echo $viaje['fecha_fin']; ?>">
                     </div>
-
                     <div>
                         <label class="form-label">Precio</label>
                         <input type="number" step="0.01" name="precio" class="auth-input" value="<?php echo $viaje['precio']; ?>">
@@ -146,7 +141,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label class="form-label">Plazas</label>
                         <input type="number" name="plazas" class="auth-input" value="<?php echo $viaje['plazas']; ?>">
                     </div>
-
                     <div>
                         <label class="form-label">Destacado</label>
                         <select name="destacado" class="auth-input">
@@ -159,7 +153,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="file" name="imagen" class="auth-input">
                     </div>
                 </div>
-
                 <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: flex-end;">
                     <a href="Read.php" class="btn-cancel">Cancelar</a>
                     <button type="submit" class="btn-save">Actualizar Datos</button>

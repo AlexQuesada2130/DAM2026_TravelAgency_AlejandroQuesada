@@ -81,7 +81,7 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <div style="margin-top: 30px;">
-                <a href="../Dashboard.php" style="color: #2388C7; text-decoration: none;">&larr; Volver al Panel</a>
+                <a href="../Dashboard.php" style="color: #2388C7; text-decoration: none;"> Volver al Panel</a>
             </div>
         </div>
     </body>

@@ -7,7 +7,6 @@ require_once '../../classes/User.php';
 $mensaje = "";
 $emailValue = ""; 
 
-// --- LÓGICA (CONTROLADOR) ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
     $usuarioObj = new Usuario(); 
@@ -19,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $usuarioObj->login($email, $pass);
 
         if ($user) {
-            // Login correcto:
             if ($user['es_admin'] == 1) {
                 header("Location: ../../admin/Dashboard.php"); 
             } else {
@@ -41,11 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($usuarioObj->registrar($nombre, $apellidos, $email, $pass)) {
             $mensaje = "¡Registro completado inicia sesión!";
         } else {
-            $mensaje = "Este correo ya fue registrado";
+            $mensaje = "Esta cuenta ya fue registrada";
         }
     }
 }
-
-// Si no hay POST, o si hubo error, cargamos la vista.
 require_once '../../screens/auth/LoginView.php';
 ?>

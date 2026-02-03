@@ -7,14 +7,12 @@
             <p>+34 600 000000</p>
             <p>info@urbantrips.com</p>
         </div>
-
         <div>
             <h3>Información</h3>
             <a href="../public/information/terminos.pdf" target="_blank">Términos y Condiciones</a>
             <a href="../public/information/privacidad.pdf" target="_blank">Política de Privacidad</a>
             <a href="../public/information/Legal.php" target="_blank">Aviso Legal</a>
         </div>
-
         <div>
             <h3>Únete a nosotros</h3>
             <a href="../public/index.php">Home</a>

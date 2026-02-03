@@ -1,15 +1,11 @@
 <?php
-// 1. Incluir configuración y base de datos
 require_once '../classes/Database.php'; 
 
-// 2. Capturar el filtro de la URL
 $filtro = isset($_GET['filtro']) ? $_GET['filtro'] : 'todos';
 
-// 3. Conexión a Base de Datos
 $db = new Database(); 
 $con = $db->getConnection(); 
 
-// 4. Preparar la consulta SQL según el filtro
 $sql = "";
 $param = "";
 $titulo_pagina = "";
@@ -39,7 +35,6 @@ switch ($filtro) {
         break;
 }
 
-// 5. Ejecutar la consulta
 $stmt = $con->prepare($sql);
 
 if ($filtro == 'andalucia' || $filtro == 'europa') {
@@ -184,7 +179,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php foreach($viajes as $viaje): ?>
                             <div class="viaje-card">
                                 <img src="../assets/list/<?php echo $viaje['imagen']; ?>" alt="<?php echo $viaje['titulo']; ?>">
-                                
                                 <h2><?php echo $viaje['titulo']; ?></h2>
                                 <p><?php echo $viaje['descripcion']; ?></p>
                                 <span class="precio"><?php echo $viaje['precio']; ?>€</span>

@@ -4,7 +4,7 @@ require_once '../classes/Database.php';
 $db = new Database();
 $conn = $db->getConnection();
 
-$sql = "SELECT * FROM viajes ORDER BY id_viaje DESC LIMIT 6";
+$sql = "SELECT * FROM viajes ORDER BY id_viaje DESC LIMIT 30";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -22,9 +22,8 @@ $carpetaImagenes = "../assets/list/";
             <?php foreach ($viajes as $viaje): ?>
                 
                 <?php 
-                    $nombreArchivo = !empty($viaje['imagen']) ? htmlspecialchars($viaje['imagen']) : "default.jpg";
+                    $nombreArchivo = !empty($viaje['imagen']) ? htmlspecialchars($viaje['imagen']) : "logo.png";
                     $rutaCompleta = $carpetaImagenes . $nombreArchivo;
-                    // ID único para conectar el botón con su ventana modal específica
                     $modalID = "modal-" . $viaje['id_viaje'];
                 ?>
 
@@ -32,7 +31,7 @@ $carpetaImagenes = "../assets/list/";
                     <div class="card-img-box">
                         <img src="<?php echo $rutaCompleta; ?>" 
                              alt="<?php echo htmlspecialchars($viaje['titulo']); ?>" 
-                             onerror="this.src='../assets/companyimg/logofondo.png';"> 
+                             onerror="this.src='../assets/list/logo.png';"> 
                     </div>
                     
                     <div class="card-info-box">

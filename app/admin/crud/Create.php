@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();
     $conn = $db->getConnection();
 
-    // Procesar Imagen
     $nombreImagen = "";
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0) {
         $target_dir = "../../assets/list/"; // Asegúrate de crear esta carpeta
@@ -27,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $stmt = $conn->prepare($sql);
 
-    // Bind parameters
     $datos = [
         ':titulo' => $_POST['titulo'],
         ':desc' => $_POST['descripcion'],
@@ -114,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div>
-                        <label class="form-label">¿Destacado?</label>
+                        <label class="form-label">Destacado?</label>
                         <select name="destacado" class="auth-input">
                             <option value="0">No</option>
                             <option value="1">Sí</option>

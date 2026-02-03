@@ -1,5 +1,4 @@
 <?php
-// Iniciamos sesión aquí, al principio de todo
 session_start();
 ?>
 <!DOCTYPE html>
@@ -11,14 +10,10 @@ session_start();
         <link rel="stylesheet" href="../assets/styles.css">
     </head>
     <body>
-
         <div class="container">
-
             <?php include '../screens/Head.php'; ?>
-
             <?php include '../screens/Banner.php'; ?>
             <?php include '../screens/IntroBlock.php'; ?>
-
             <?php include '../screens/TravelList.php'; ?>     
     </body>
     <footer>

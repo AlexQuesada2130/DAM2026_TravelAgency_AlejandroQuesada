@@ -1,0 +1,397 @@
+body, html {
+    background-color: #2388C7;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+/* =========================
+                                                                            GRID
+   ========================= */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "cab cab cab"
+        "img img img"
+        "art sec1 sec1"
+        "sec2 sec2 sec2"
+        "pie pie pie";
+}
+
+
+.img {
+    grid-area: img;
+    height: 450px;
+    background: url("companyimg/pinturaback.jpg") center/cover no-repeat;
+    margin-bottom: 20px;
+}
+
+.section-URBAN {
+    grid-area: sec1;
+}
+.section-TRIPS {
+    grid-area: sec2;
+    margin-left: 5%;
+}
+footer {
+    grid-area: pie;
+    grid-column: 1 / -1;
+}
+
+header, section, article, footer {
+    position: relative;
+    z-index: 0;
+    text-align: center;
+}
+
+/* =========================
+                                                                    HEADER y NAV
+   ========================= */
+header {
+    grid-area: cab;
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #434B4D;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-info {
+    text-align: right;
+    color: black;
+    font-weight: bold;
+}
+
+.contact-info p {
+    margin: 2px 0;
+}
+
+nav {
+    display: flex;
+    background-color: #0B2447;
+    justify-content: center;
+    gap: 75px;
+    padding: 12px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #FF7E47;
+}
+
+.imgLogo {
+    display: block;
+    cursor: pointer;
+    height: 125px;
+    width: 180px;
+    background: url("companyimg/logo.png") top center / 100% auto no-repeat;
+}
+
+.imgLogoFoot {
+    display: block;
+    height: 150px;
+    width: 120px;
+    background: url("companyimg/logo.png") top center / 40% auto no-repeat;
+}
+/* =========================
+                                                  CONTENIDO (ARTICLE / SECTIONS)
+   ========================= */
+article, .section-URBAN, .section-TRIPS {
+    margin: 10px auto;
+    width: fit-content;
+    padding: 20px;
+}
+
+article {
+    grid-area: art;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin-left: 100px;
+    text-align: justify;
+    align-self: center;
+    justify-self: end;
+}
+/* =========================
+                                                                          FOOTER
+   ========================= */
+footer {
+    background: #0B2447;
+    color: white;
+    padding: 30px 20px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-columns div {
+    width: 30%;
+}
+
+footer h3 {
+    margin-top: 0;
+}
+
+footer a {
+    color: #A0AAB0;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+footer a:hover {
+    color: #FF7E47; 
+}
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #A0AAB0;
+}
+
+/* =========================
+                                                              TARJETAS y BOTONES
+   ========================= */
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    perspective: 1000px;
+    gap: 20px
+}
+
+.tarjeta {
+    width: calc(50% - 20px);
+    height: 300px;
+    background: center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    border-radius: 25px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.tarjeta p {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 10px 20px;
+    border-radius: 15px;
+    width: fit-content;
+}
+
+.btn-login {
+    display: inline-block;
+    border: 3px solid #434B4D;
+    color: whitesmoke;
+    background-color: #A0AAB0;
+    padding: 5px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #ff6b35;
+    color: white;
+}
+
+/* =========================
+                                                                   AUTENTICACIÓN
+   ========================= */
+body.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-wrapper {
+    width: 100%;
+    max-width: 520px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.auth-logo {
+    background: url("logo.png") center/contain no-repeat;
+    width: 120px;
+    height: 80px;
+    margin: 0 auto 10px;
+}
+
+.auth-brand {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-input {
+    padding: 12px;
+    border: 2px solid rgba(11, 36, 71, 0.25);
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.auth-btn {
+    background-color: #0B2447;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-btn:hover {
+    background-color: #FF7E47;
+    transform: translateY(-1px);
+}
+
+.auth-link-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #2388C7;
+    color: #2388C7;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.auth-link-btn:hover {
+    background-color: #2388C7;
+    color: white;
+}
+
+/* 
+                                                                     AVISO LEGAL
+*/
+.contenedor-legal {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.titulo-legal {
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.seccion-legal {
+    padding-bottom: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.contenedor-legal ul li {
+    margin-bottom: 8px;
+}
+
+/* 
+                                                                     Tablas CRUD
+*/
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+.crud-table th, .crud-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+.crud-table th {
+    background-color: #f8f9fa;
+    color: #0B2447;
+    font-weight: 600;
+}
+.crud-actions {
+    display: flex;
+    gap: 10px;
+}
+.btn-action {
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: white;
+}
+.btn-edit { background-color: #ffc107; color: #333; }
+.btn-delete { background-color: #dc3545; }
+
+/* Ajustes para formularios largos */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+}
+.full-width { grid-column: span 2; }
+.form-label { display: block; margin-bottom: 5px; color: #666; font-weight: bold; }
+textarea.auth-input { height: 100px; resize: vertical; }
+
+/* =========================
+                                                                   RESPONSIVIDAD
+   ========================= */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: "cab" "img" "art" "sec1" "sec2" "pie";
+        grid-template-columns: 1fr;
+    }
+    .tarjeta, article, .section-URBAN, .section-TRIPS {
+        width: 95%;
+        margin: 10px auto;
+    }
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .container-resultados {
+        padding: 20px;
+    }
+    
+    .container-resultados h1 {
+        font-size: 1.8rem;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 20px;
+    }
+}

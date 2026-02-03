@@ -143,7 +143,7 @@ $carpetaImagenes = "../assets/list/";
     
     .card-viaje-title {
         color: #0B2447; margin: 0; font-size: 1.2rem; font-weight: bold;
-        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        overflow: hidden;
     }
     .card-viaje-price { font-size: 1.5rem; color: #FF7E47; font-weight: 800; margin: 10px 0; }
     

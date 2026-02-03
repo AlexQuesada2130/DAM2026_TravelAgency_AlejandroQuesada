@@ -48,26 +48,14 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="es">
     <style>
-        /* =========================================
-           ESTRUCTURA Y CONTRASTE (SOLUCIÓN DEFINITIVA)
-           ========================================= */
         body {
-            background-color: #2388C7; /* FONDO AZUL PARA QUE RESALTE EL TEXTO BLANCO */
+            background-color: #2388C7;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
             margin: 0;
             font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
         }
 
-        /* 2. Z-Index para el Menú (Banner) */
-        header, nav, .navbar {
-            position: relative;
-            z-index: 1000 !important;
-            background-color: white; /* Aseguramos fondo blanco en el menú */
-        }
-
-        /* 3. Contenedor Principal */
         .container-resultados {
             flex: 1; 
             position: relative;
@@ -100,12 +88,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             z-index: 5; 
         }
 
-        .viaje-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
         .viaje-card img {
             width: 100%;
             height: 220px; 
@@ -114,22 +96,16 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .viaje-card h2 {
-            color: #0B2447; /* Azul muy oscuro */
+            color: #000000;
             font-size: 1.4rem;
             margin: 20px 20px 10px;
-            line-height: 1.2;
         }
 
         .viaje-card p {
             color: #555;
             padding: 0 20px;
             font-size: 0.95rem;
-            flex-grow: 1; 
-            display: -webkit-box;
-            -webkit-line-clamp: 3; 
-            -webkit-box-orient: vertical;
             overflow: hidden;
-            margin-bottom: 15px;
         }
 
         .viaje-card .precio {
@@ -141,33 +117,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             padding: 0 20px 10px;
         }
 
-        .viaje-card .btn {
-            display: block;
-            background-color: #0B2447;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            margin: 0 20px 20px; 
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .viaje-card .btn:hover {
-            background-color: #FF7E47; /* Naranja al pasar el ratón */
-            color: white;
-        }
-
-        .lista-viajes > p {
-            text-align: center;
-            font-size: 1.2rem;
-            padding: 20px;
-            border-radius: 10px;
-            color: #FFFFFF;
-            font-weight: bold;
-            grid-column: 1 / -1;
-        }
     </style>
         <main class="container-resultados">
             <h1><?php echo $titulo_pagina; ?></h1>
@@ -182,7 +131,6 @@ $viajes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <h2><?php echo $viaje['titulo']; ?></h2>
                                 <p><?php echo $viaje['descripcion']; ?></p>
                                 <span class="precio"><?php echo $viaje['precio']; ?>€</span>
-                                <a href="detalle_viaje.php?id=<?php echo $viaje['id_viaje']; ?>" class="btn">Ver más</a>
                             </div>
                         <?php endforeach; ?>
                     </div>

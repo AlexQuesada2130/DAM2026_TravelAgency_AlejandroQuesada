@@ -5,7 +5,6 @@
             <h3><p>VISITA EL ARTE <BR> DE ANDALUCÍA</p></h3>
         </div>
         </a>
-
         <a href="../public/Results.php?filtro=europa" style="display: contents;">
             <div  class="tarjeta" style="background-image: url('../assets/navigationimg/berlin.jpg');">
                 <h3><p>VIAJA POR <BR>  EUROPA</p></h3>
@@ -21,7 +20,6 @@
                 <h3> <p> VERANO 2026 <BR>LLENO DE ARTE </p></h3>
             </div> 
         </a>
-
     </div>
 </section>
 
